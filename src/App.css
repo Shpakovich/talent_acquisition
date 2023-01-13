@@ -1,5 +1,7 @@
 .App {
   display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 82px 1fr;
 }
 
 #root {

@@ -1,0 +1,8 @@
+.Top-header {
+    display: grid;
+    grid-auto-flow: column;
+    height: 82px;
+    max-height: 82px;
+    overflow: hidden;
+    justify-content: space-between;
+}

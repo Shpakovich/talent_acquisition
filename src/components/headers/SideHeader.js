@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Header.css';
+import './SideHeader.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { NavLink } from 'react-router-dom';
@@ -42,7 +42,7 @@ const optionList = [{
     icon: 'magnifying-glass',
     link: 'find',
 }];
-export default class Header extends Component {
+export default class SideHeader extends Component {
     render() {
         return(
             <header className="App-header">
