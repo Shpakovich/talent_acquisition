@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import './LinearProgressWithLabel.css';
 
 function LinearProgressWithLabel(props) {
     return (
@@ -11,7 +12,7 @@ function LinearProgressWithLabel(props) {
                 <Typography variant="body2" align="center" color="text.secondary">{`${Math.round(
                     props.value,
                 )}%`}</Typography>
-                <LinearProgress color="secondary" variant="determinate" {...props} />
+                <LinearProgress color="primary" className="Progress-bar" variant="determinate" {...props} />
             </Box>
         </Box>
     );

@@ -28,3 +28,7 @@ img {
 .Card-date {
     line-height: 36px!important;
 }
+
+.Project-tags {
+    padding-inline-start: 16px
+}

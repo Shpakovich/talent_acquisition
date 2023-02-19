@@ -71,7 +71,6 @@ export default function CustomizedMenus() {
         <div>
             <Button
                 className="Menu-more-btn"
-                color="secondary"
                 id="demo-customized-button"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
                 aria-haspopup="true"
@@ -79,7 +78,7 @@ export default function CustomizedMenus() {
                 disableElevation
                 onClick={handleClick}
                 endIcon={<FontAwesomeIcon icon={myIcons['ellipsis']} className='fa-sm' />}
-            / >
+            />
             <StyledMenu
                 id="demo-customized-menu"
                 MenuListProps={{
@@ -89,7 +88,7 @@ export default function CustomizedMenus() {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem className="Menu-item" onClick={handleClose} disableRipple>
+                <MenuItem color="primary" className="Menu-item" onClick={handleClose} disableRipple>
                     <FontAwesomeIcon icon={myIcons['edit']} className='fa-sm' />
                     <FontAwesomeIcon icon="fa-regular fa-pen-to-square" />
                     Edit

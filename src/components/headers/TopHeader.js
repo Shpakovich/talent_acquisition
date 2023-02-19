@@ -22,7 +22,7 @@ export default function RecipeReviewCard() {
                     ))}
                 </ButtonGroup>
                 <Box component="div" sx={{ display: 'grid', gridAutoFlow: 'column' }}>
-                    <IconButton color="secondary" aria-label="add an alarm">
+                    <IconButton aria-label="add an alarm">
                         <FontAwesomeIcon icon={solid('moon')} className='fa-xl' />
                     </IconButton>
                     <div className="Avatar-wrap">

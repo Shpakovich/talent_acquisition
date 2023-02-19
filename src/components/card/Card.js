@@ -33,14 +33,14 @@ export default function RecipeReviewCard() {
                 <Typography variant="h6" color="black" className="Project-title">
                     Sberseasons
                 </Typography>
-                <ul>
+                <ul className="Project-tags ">
                     <li>Social media strategy</li>
                     <li>Social media branding</li>
                 </ul>
                 <LinearProgressWithLabel value='70%' />
             </CardContent>
             <CardContent className="Card-footer">
-                <Typography variant="body2" color="text.second" className="Card-date">
+                <Typography variant="body2" color="text.secondary" className="Card-date">
                     23.03.2022
                 </Typography>
                 <Box className="Card-avatar-wrap">
