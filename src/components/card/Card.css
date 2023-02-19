@@ -1,0 +1,30 @@
+.MuiCardHeader-action {
+    margin: auto !important;
+}
+
+.Card {
+    border-radius: 16px !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+}
+.Project-title {
+    font-weight: bold!important;
+}
+.Card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Card-avatar-wrap {
+    display: flex;
+    margin-left: auto;
+    gap: 8px;
+}
+
+img {
+    min-width: 36px;
+}
+
+.Card-date {
+    line-height: 36px!important;
+}

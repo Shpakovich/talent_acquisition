@@ -8,27 +8,33 @@ import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
 import Avatar from '@mui/material/Avatar';
 import {Box} from "@mui/material";
 import { deepOrange } from '@mui/material/colors';
+import { useLocation } from 'react-router-dom'
 
 const HeaderList = ['All', 'Current', 'Finished', 'On Hold', 'Archive']
 
-export default class TopHeader extends Component {
-    render() {
+export default function RecipeReviewCard() {
         return(
             <section className="Top-header">
-                <h1>Home</h1>
-                <ButtonGroup variant="text" aria-label="text button group">
+                <h1 className="Header-title">{GetTitle()}</h1>
+                <ButtonGroup className="Button-group" variant="text" aria-label="text button group">
                     {HeaderList.map((name) => (
-                        <Button>{name}</Button>
+                        <Button className="Button-filter">{name}</Button>
                     ))}
                 </ButtonGroup>
-                <Box component="span" sx={{ display: 'grid', gridAutoFlow: 'column' }}>
+                <Box component="div" sx={{ display: 'grid', gridAutoFlow: 'column' }}>
                     <IconButton color="secondary" aria-label="add an alarm">
                         <FontAwesomeIcon icon={solid('moon')} className='fa-xl' />
                     </IconButton>
-                    <p>User Name</p>
-                    <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+                    <div className="Avatar-wrap">
+                        <p>User Name</p>
+                        <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+                    </div>
                 </Box>
             </section>
         )
-    }
+}
+
+function GetTitle() {
+    const location = useLocation();
+    return location.pathname.slice(1).toUpperCase();
 }

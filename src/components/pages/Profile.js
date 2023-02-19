@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import RecipeReviewCard from "../card/Card";
 
 export default class Profile extends Component {
     render() {
         return (
-            <h1>Profile</h1>
+            <div className="Profile">
+                <RecipeReviewCard />
+            </div>
         )
     }
 }

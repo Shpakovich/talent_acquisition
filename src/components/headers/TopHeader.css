@@ -6,3 +6,27 @@
     overflow: hidden;
     justify-content: space-between;
 }
+
+.Header-title {
+    margin: auto;
+}
+
+.Button-group {
+    height: 20px;
+    margin: auto;
+}
+
+.Button-filter {
+    color: black!important;
+    border-color: black!important;
+}
+
+.Avatar-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin: auto;
+}
+p {
+    margin: auto;
+}
