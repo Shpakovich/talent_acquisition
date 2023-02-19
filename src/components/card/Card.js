@@ -11,10 +11,7 @@ import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import LinearProgressWithLabel from './LinearProgressWithLabel';
 import {Box} from "@mui/material";
-
-const myIcons = {
-    ellipsis: solid('ellipsis')
-}
+import CustomizedMenus from "./CustomizedMenus";
 
 export default function RecipeReviewCard() {
     return (
@@ -29,9 +26,7 @@ export default function RecipeReviewCard() {
                     />
                 }
                 action={
-                    <IconButton aria-label="settings" className="More-icon">
-                        <FontAwesomeIcon icon={myIcons['ellipsis']} className='fa-sm' />
-                    </IconButton>
+                    <CustomizedMenus />
                 }
             />
             <CardContent>

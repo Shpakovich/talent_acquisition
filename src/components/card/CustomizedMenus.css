@@ -1,0 +1,11 @@
+.Menu-item {
+    display: flex;
+    gap: 8px;
+}
+.Menu-more-btn{
+    min-width: 36px!important;
+}
+
+span {
+    margin: auto!important;
+}
