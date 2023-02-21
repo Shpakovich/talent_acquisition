@@ -7,9 +7,10 @@ import { NavLink } from 'react-router-dom';
 
 // you'd put all valid values that can come from the backend here
 const myIcons = {
-    house: solid('house'),
+    progress: solid('bars-progress'),
     user: solid('user'),
     'clipboard-list': solid('clipboard-list'),
+    chart: solid('chart-pie'),
     envelope: solid('envelope'),
     gear: solid('gear'),
     'magnifying-glass': solid('magnifying-glass'),
@@ -17,13 +18,13 @@ const myIcons = {
 
 
 const headerList = [{
-    name: 'Home',
-    icon: 'house',
-    link: '',
+    name: 'Projects',
+    icon: 'progress',
+    link: 'projects',
 },{
-    name: 'Profile',
-    icon: 'user',
-    link: 'profile',
+    name: 'analytics',
+    icon: 'chart',
+    link: 'analytics',
 },{
     name: 'Interview',
     icon: 'clipboard-list',
