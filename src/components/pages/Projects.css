@@ -1,5 +1,16 @@
-.Project-Add-Button {
+.Projects-Add-Button {
     position: absolute!important;
     bottom: 16px;
     right: 16px;
+}
+
+.Projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.Projects-card {
+    width: 345px;
+    margin: auto;
 }
