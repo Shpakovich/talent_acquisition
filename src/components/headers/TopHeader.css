@@ -30,3 +30,12 @@
 p {
     margin: auto;
 }
+
+.Top-header-theme-button {
+    width: 42px;
+    min-width: 42px!important;
+    height: 42px!important;
+    border-radius: 12px!important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: auto!important;
+}

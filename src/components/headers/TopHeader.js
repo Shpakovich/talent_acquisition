@@ -9,20 +9,28 @@ import Avatar from '@mui/material/Avatar';
 import {Box} from "@mui/material";
 import { deepOrange } from '@mui/material/colors';
 import { useLocation } from 'react-router-dom'
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 const HeaderList = ['All', 'Current', 'Finished', 'On Hold', 'Archive']
 
 export default function RecipeReviewCard() {
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
         return(
             <section className="Top-header">
                 <h1 className="Header-title">{GetTitle()}</h1>
-                <ButtonGroup className="Button-group" variant="text" aria-label="text button group">
+                <Tabs className="Button-group" value={value} onChange={handleChange} aria-label="basic tabs example">
                     {HeaderList.map((name) => (
-                        <Button className="Button-filter">{name}</Button>
+                        <Tab label={name} />
                     ))}
-                </ButtonGroup>
-                <Box component="div" sx={{ display: 'grid', gridAutoFlow: 'column' }}>
-                    <IconButton aria-label="add an alarm">
+                </Tabs>
+                <Box component="div" sx={{ display: 'grid', gridAutoFlow: 'column', gap: '16px' }}>
+                    <IconButton className="Top-header-theme-button">
                         <FontAwesomeIcon icon={solid('moon')} className='fa-xl' />
                     </IconButton>
                     <div className="Avatar-wrap">
