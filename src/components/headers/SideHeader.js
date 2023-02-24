@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './SideHeader.css';
+import { ReactComponent as Logo } from './../../assets/images/Logo2.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { NavLink } from 'react-router-dom';
@@ -47,6 +48,7 @@ export default class SideHeader extends Component {
     render() {
         return(
             <header className="App-header">
+                <Logo style={{margin: 'auto'}} />
                 <div className="main">
                     {headerList.map(({ name, icon, link }) => (
                         <NavLink to={link} className={`header-link ${({ isActive }) => (isActive && 'active')}`} key={name}>
