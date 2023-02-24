@@ -70,7 +70,6 @@ const payOptions = {
             },
             labelLine: {
                 length: 15,
-                length2: 0,
                 maxSurfaceAngle: 80
             },
             labelLayout: function (params) {

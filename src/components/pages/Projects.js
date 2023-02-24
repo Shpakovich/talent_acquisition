@@ -4,6 +4,7 @@ import Fab from '@mui/material/Fab';
 import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import './Projects.css';
+import CreateProjectDialog from "../project/CreateProjectDialog";
 
 const myIcons = {
     plus: solid('plus'),
@@ -86,19 +87,26 @@ const ProjectsArray = [{
     }]
 }];
 
-export default class Projects extends Component {
-    render() {
-        return (
-            <div className="Projects">
-                <div className="Projects-grid">
-                    {ProjectsArray.map(({title, logo, tags, date, users})=> (
-                        <RecipeReviewCard className="Projects-card" logo={logo} title={title} tags={tags} date={date} users={users} />
-                    ))}
-                </div>
-                <Fab color="primary" aria-label="add" className="Projects-Add-Button">
-                    <FontAwesomeIcon icon={myIcons['plus']} className='fa-2x' />
-                </Fab>
+export default function Projects () {
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    return (
+        <div className="Projects">
+            <div className="Projects-grid">
+                {ProjectsArray.map(({title, logo, tags, date, users})=> (
+                    <RecipeReviewCard className="Projects-card" logo={logo} title={title} tags={tags} date={date} users={users} />
+                ))}
             </div>
-        )
-    }
+            <CreateProjectDialog onClose={handleClose} open={open}/>
+            <Fab color="primary" aria-label="add" className="Projects-Add-Button" onClick={handleClickOpen}>
+                <FontAwesomeIcon icon={myIcons['plus']} className='fa-2x' />
+            </Fab>
+        </div>
+    )
 }
