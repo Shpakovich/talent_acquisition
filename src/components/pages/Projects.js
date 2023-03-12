@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import RecipeReviewCard from "../card/Card";
 import Fab from '@mui/material/Fab';
 import {solid} from "@fortawesome/fontawesome-svg-core/import.macro";
@@ -6,6 +6,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import './Projects.css';
 import CreateProjectDialog from "../project/CreateProjectDialog";
 import {TalentAcquisitionApi} from "../../api";
+import {useStore} from "effector-react";
+import {$project, setProject} from "../../store/project";
 
 const myIcons = {
     plus: solid('plus'),
@@ -13,13 +15,10 @@ const myIcons = {
 
 
 export default function Projects () {
-    const [ProjectsArray, setProjectsArray] = useState(null);
     useEffect(() => {
         TalentAcquisitionApi.project.get()
-            .then(data => setProjectsArray(data)) // TODO use some store
+            .then(data => setProject(data))
     }, []);
-
-    console.debug(ProjectsArray)
 
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
@@ -29,10 +28,11 @@ export default function Projects () {
         setOpen(false);
     };
 
+    const projectStore = useStore($project);
     return (
         <div className="Projects">
             <div className="Projects-grid">
-                {ProjectsArray?.map(({id, name, tags, description, logo, dateEnd, participants}) => (
+                {projectStore?.map(({id, name, tags, description, logo, dateEnd, participants}) => (
                     <RecipeReviewCard
                         className="Projects-card"
                         key={id}
