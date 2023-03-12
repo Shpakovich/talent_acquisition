@@ -15,12 +15,8 @@ const myIcons = {
 export default function Projects () {
     const [ProjectsArray, setProjectsArray] = useState(null);
     useEffect(() => {
-        // GET request using fetch inside useEffect React hook
-        fetch('http://localhost:4000/api/project')
-            .then(response => response.json())
-            .then(data => setProjectsArray(data));
-
-        // empty dependency array means this effect will only run once (like componentDidMount in classes)
+        TalentAcquisitionApi.project.get()
+            .then(data => setProjectsArray(data)) // TODO use some store
     }, []);
 
     console.debug(ProjectsArray)
