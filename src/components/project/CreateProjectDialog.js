@@ -11,6 +11,8 @@ import Stack from '@mui/material/Stack';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import './CreateProjectDialog.css'
+import {TalentAcquisitionApi} from "../../api";
+import {setProject} from "../../store/project";
 
 
 export default function CreateProjectDialog (props) {
@@ -20,6 +22,24 @@ export default function CreateProjectDialog (props) {
     const handleChange = (newValue) => {
         setValue(newValue);
     };
+
+    const createProject = ()=> {
+        const TestData = {
+            id: 4,
+            name: 'Sbers HR',
+            description: 'New project',
+            tags: ['New', 'HH'],
+            logo: 'https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01-340x340.png',
+            dateStart: Date.now(),
+            dateEnd: Date.now() + 10000000,
+            participants: [1, 3],
+        };
+        TalentAcquisitionApi.project.create(TestData).then((allProjects)=> {
+            console.debug('allProjects', allProjects)
+            setProject(allProjects)
+            props.onClose();
+        })
+    }
 
         return (
             <Dialog
@@ -62,7 +82,7 @@ export default function CreateProjectDialog (props) {
                 </DialogContent>
                 <DialogActions>
                     <Button variant="outlined" onClick={props.onClose}>Отмена</Button>
-                    <Button variant="contained" onClick={props.onClose}>Создать</Button>
+                    <Button variant="contained" onClick={createProject}>Создать</Button>
                 </DialogActions>
             </Dialog>
         )
