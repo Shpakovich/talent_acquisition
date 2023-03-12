@@ -18,7 +18,7 @@ export default function RecipeReviewCard(props) {
                         component="img"
                         height="36"
                         image={props.logo}
-                        alt="Paella dish"
+                        alt="Project logo"
                     />
                 }
                 action={
@@ -38,15 +38,19 @@ export default function RecipeReviewCard(props) {
             </CardContent>
             <CardContent className="Card-footer">
                 <Typography variant="body2" color="text.secondary" className="Card-date">
-                    {props.date}
+                    {Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: '2-digit',
+                    }).format(props.date)}
                 </Typography>
                 <Box className="Card-avatar-wrap">
-                    {props.users.map(({username, avatar})=> (
+                    {props.users.map(()=> (
                         <CardMedia
                             component="img"
                             height="36"
-                            image={avatar}
-                            alt={username}
+                            image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
+                            alt="user avatar"
                         />
                     ))}
                 </Box>
